@@ -1,3 +1,1 @@
-# Eutopia
-
 ## Progress through Knowledge
