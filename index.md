@@ -1,1 +1,3 @@
-## Progress through Knowledge
+---
+layout: home
+---
