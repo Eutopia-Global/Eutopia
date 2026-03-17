@@ -1,3 +1,3 @@
-# Eutopia
+# Eutopian Movement
 
-Simple holding page for the Eutopia network state web site
+Simple holding page for the Eutopian Movement web site
