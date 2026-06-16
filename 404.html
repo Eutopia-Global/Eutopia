@@ -1,24 +1,48 @@
----
-layout: default
----
-
-<style type="text/css" media="screen">
-  .container {
-    margin: 10px auto;
-    max-width: 600px;
-    text-align: center;
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Page not found — Eutopia</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700&family=Hanken+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet" />
+<style>
+  :root{
+    --paper:#FBF9F4;
+    --ink:#1E1B16;
+    --muted:#6B6359;
+    --gold:#C8881F;
   }
-  h1 {
-    margin: 30px 0;
-    font-size: 4em;
-    line-height: 1;
-    letter-spacing: -1px;
+  *{box-sizing:border-box}
+  body{
+    margin:0;min-height:100vh;
+    display:flex;align-items:center;justify-content:center;
+    background:var(--paper);color:var(--ink);
+    font-family:"Hanken Grotesk",system-ui,sans-serif;
+    text-align:center;padding:24px;
   }
+  .box{max-width:420px}
+  h1{
+    font-family:"Fraunces",serif;font-weight:600;
+    font-size:clamp(72px,18vw,120px);line-height:1;margin:0 0 8px;color:var(--gold);
+  }
+  p{font-size:18px;color:var(--muted);margin:0 0 28px}
+  p strong{color:var(--ink);font-weight:600}
+  .btn{
+    display:inline-flex;align-items:center;gap:8px;
+    font-weight:600;font-size:15px;text-decoration:none;
+    padding:13px 22px;border-radius:999px;
+    background:var(--ink);color:var(--paper);transition:transform .15s;
+  }
+  .btn:hover{transform:translateY(-2px)}
 </style>
-
-<div class="container">
-  <h1>404</h1>
-
-  <p><strong>Page not found :(</strong></p>
-  <p>The requested page could not be found.</p>
-</div>
+</head>
+<body>
+  <div class="box">
+    <h1>404</h1>
+    <p><strong>This place isn't here.</strong><br />The page you were looking for could not be found.</p>
+    <a class="btn" href="/">Back to Eutopia &rarr;</a>
+  </div>
+</body>
+</html>

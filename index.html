@@ -1,0 +1,378 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Eutopia — a good place, not a perfect one</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700&family=Hanken+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet" />
+<style>
+  :root{
+    --paper:#FBF9F4;
+    --paper-2:#F4EFE4;
+    --ink:#1E1B16;
+    --muted:#6B6359;
+    --soft:#48423A;
+    --line:#E4DDCE;
+    --gold:#C8881F;
+
+    --spark:#D99523;
+    --wally:#3D6B47;
+    --up:#2E78A8;
+    --dots:#C25B3F;
+    --nest:#8A5A6E;
+    --diner:#2E8B84;
+    --steward:#423A53;
+
+    --maxw:1120px;
+    --r:18px;
+  }
+
+  *{box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{
+    margin:0;
+    background:var(--paper);
+    color:var(--ink);
+    font-family:"Hanken Grotesk",system-ui,sans-serif;
+    font-size:18px;
+    line-height:1.6;
+    -webkit-font-smoothing:antialiased;
+  }
+  .wrap{max-width:var(--maxw);margin:0 auto;padding:0 24px}
+  a{color:inherit}
+
+  /* ---------- top bar ---------- */
+  header.nav{
+    position:sticky;top:0;z-index:20;
+    background:rgba(251,249,244,.82);
+    backdrop-filter:saturate(140%) blur(8px);
+    border-bottom:1px solid var(--line);
+  }
+  .nav-inner{display:flex;align-items:center;justify-content:space-between;height:64px}
+  .brand{
+    font-family:"Fraunces",serif;font-weight:600;font-size:22px;letter-spacing:-.01em;
+    text-decoration:none;display:flex;align-items:center;gap:10px;
+  }
+  .brand .mark{
+    width:18px;height:18px;border-radius:50%;
+    background:radial-gradient(circle at 50% 50%, transparent 0 2px, var(--gold) 2px 4px, transparent 4px 6px, var(--ink) 6px 7px, transparent 7px 9px, var(--wally) 9px 11px, transparent 11px 99px);
+    border:1.5px solid var(--ink);
+  }
+  .nav-links{display:flex;gap:28px;font-size:15px;font-weight:500}
+  .nav-links a{text-decoration:none;color:var(--muted);transition:color .2s}
+  .nav-links a:hover{color:var(--ink)}
+  @media(max-width:640px){.nav-links{display:none}}
+
+  /* ---------- hero ---------- */
+  .hero{position:relative;overflow:hidden;padding:88px 0 64px}
+  .hero .rings{
+    position:absolute;right:-160px;top:-120px;width:620px;height:620px;
+    pointer-events:none;opacity:.5;
+  }
+  .eyebrow{
+    font-size:13px;font-weight:600;letter-spacing:.16em;text-transform:uppercase;
+    color:var(--gold);margin:0 0 18px;
+  }
+  h1{
+    font-family:"Fraunces",serif;font-weight:600;
+    font-size:clamp(40px,7vw,76px);line-height:1.02;letter-spacing:-.02em;
+    margin:0 0 14px;max-width:14ch;
+  }
+  h1 em{font-style:italic;color:var(--gold)}
+  .motto{
+    font-family:"Fraunces",serif;font-style:italic;font-weight:500;
+    font-size:clamp(20px,2.6vw,26px);color:var(--soft);margin:0 0 24px;
+  }
+  .lede{font-size:clamp(18px,2.2vw,21px);color:var(--muted);max-width:56ch;margin:0 0 32px}
+  .cta-row{display:flex;gap:14px;flex-wrap:wrap}
+  .btn{
+    display:inline-flex;align-items:center;gap:8px;
+    font-weight:600;font-size:15px;text-decoration:none;
+    padding:13px 22px;border-radius:999px;transition:transform .15s, background .2s, color .2s;
+  }
+  .btn-primary{background:var(--ink);color:var(--paper)}
+  .btn-primary:hover{transform:translateY(-2px)}
+  .btn-ghost{border:1.5px solid var(--ink);color:var(--ink)}
+  .btn-ghost:hover{background:var(--ink);color:var(--paper)}
+
+  /* ---------- section frame ---------- */
+  section{padding:72px 0}
+  .sec-eyebrow{
+    font-size:13px;font-weight:600;letter-spacing:.16em;text-transform:uppercase;
+    color:var(--muted);margin:0 0 14px;
+  }
+  h2{font-family:"Fraunces",serif;font-weight:600;font-size:clamp(28px,4vw,42px);line-height:1.08;letter-spacing:-.015em;margin:0 0 18px}
+  .sec-lede{color:var(--muted);max-width:60ch;margin:0 0 40px;font-size:19px}
+  .philo-intro{color:var(--soft);max-width:66ch;margin:0 0 44px;font-size:19px;line-height:1.62}
+  .philo-intro b{color:var(--ink);font-weight:600}
+
+  /* ---------- philosophy ---------- */
+  .belief{background:var(--paper-2)}
+  .belief-grid{display:grid;grid-template-columns:1.15fr 1fr;gap:56px;align-items:center}
+  @media(max-width:860px){.belief-grid{grid-template-columns:1fr;gap:40px}}
+  .values{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:1fr 1fr;gap:24px 32px}
+  @media(max-width:520px){.values{grid-template-columns:1fr}}
+  .values li h3{font-family:"Fraunces",serif;font-weight:600;font-size:19px;margin:0 0 4px}
+  .values li p{margin:0;font-size:15px;color:var(--muted);line-height:1.5}
+
+  .circles{display:flex;flex-direction:column;align-items:center;gap:18px}
+  .circles svg{width:100%;max-width:360px;height:auto}
+  .circles .caption{font-size:14px;color:var(--muted);text-align:center;max-width:36ch}
+
+  /* ---------- projects ---------- */
+  .grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+  @media(max-width:860px){.grid{grid-template-columns:repeat(2,1fr)}}
+  @media(max-width:520px){.grid{grid-template-columns:1fr}}
+
+  .tile{
+    position:relative;display:flex;flex-direction:column;justify-content:space-between;
+    min-height:212px;padding:24px;border-radius:var(--r);
+    color:#fff;text-decoration:none;overflow:hidden;
+    transition:transform .2s ease, box-shadow .2s ease;
+    box-shadow:0 1px 0 rgba(0,0,0,.04);
+  }
+  .tile:hover{transform:translateY(-5px);box-shadow:0 18px 40px -18px rgba(0,0,0,.45)}
+  .tile:focus-visible{outline:3px solid var(--ink);outline-offset:3px}
+  .tile .kicker{font-size:12px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;opacity:.82}
+  .tile h3{font-family:"Fraunces",serif;font-weight:600;font-size:25px;line-height:1.1;margin:14px 0 6px}
+  .tile p{margin:0;font-size:15px;opacity:.92;line-height:1.45}
+  .tile .go{
+    margin-top:18px;font-size:14px;font-weight:600;display:inline-flex;align-items:center;gap:7px;
+    opacity:.95;
+  }
+  .tile .go .arrow{transition:transform .2s}
+  .tile:hover .go .arrow{transform:translateX(4px)}
+
+  .t-spark{background:var(--spark)}
+  .t-wally{background:var(--wally)}
+  .t-up{background:var(--up)}
+  .t-dots{background:var(--dots)}
+  .t-nest{background:var(--nest)}
+  .t-diner{background:var(--diner)}
+
+  .tile-wide{grid-column:span 3;background:var(--steward);min-height:auto}
+  @media(max-width:860px){.tile-wide{grid-column:span 2}}
+  @media(max-width:520px){.tile-wide{grid-column:span 1}}
+  .steward-inner{display:grid;grid-template-columns:1.3fr 1fr;gap:30px;align-items:center}
+  @media(max-width:700px){.steward-inner{grid-template-columns:1fr;gap:20px}}
+  .steward-list{display:flex;flex-wrap:wrap;gap:10px}
+  .chip{
+    font-size:14px;font-weight:600;background:rgba(255,255,255,.14);
+    border:1px solid rgba(255,255,255,.22);padding:8px 14px;border-radius:999px;
+  }
+
+  /* ---------- other work ---------- */
+  .other{background:var(--paper-2)}
+  .other-cols{display:grid;grid-template-columns:1fr 1fr;gap:40px}
+  @media(max-width:700px){.other-cols{grid-template-columns:1fr;gap:28px}}
+  .other h3{font-family:"Fraunces",serif;font-size:20px;margin:0 0 10px}
+  .other p{margin:0;color:var(--muted);font-size:16px}
+
+  /* ---------- footer ---------- */
+  footer{padding:56px 0;border-top:1px solid var(--line)}
+  .foot-inner{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:18px}
+  .foot-inner .brand{font-size:20px}
+  .foot-meta{font-size:14px;color:var(--muted)}
+  .foot-meta a{color:var(--gold);text-decoration:none}
+
+  .reveal{opacity:0;transform:translateY(16px);transition:opacity .7s ease, transform .7s ease}
+  .reveal.in{opacity:1;transform:none}
+  @media(prefers-reduced-motion:reduce){
+    .reveal{opacity:1;transform:none;transition:none}
+    .tile,.btn,.tile .go .arrow{transition:none}
+    html{scroll-behavior:auto}
+  }
+</style>
+</head>
+<body>
+
+<header class="nav">
+  <div class="wrap nav-inner">
+    <a class="brand" href="#top"><span class="mark" aria-hidden="true"></span>Eutopia</a>
+    <nav class="nav-links" aria-label="Primary">
+      <a href="#philosophy">Philosophy</a>
+      <a href="#projects">Projects</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </div>
+</header>
+
+<main id="top">
+
+  <!-- HERO -->
+  <section class="hero">
+    <svg class="rings" viewBox="0 0 600 600" aria-hidden="true" fill="none">
+      <circle cx="300" cy="300" r="70"  stroke="#D99523" stroke-width="1.5"/>
+      <circle cx="300" cy="300" r="150" stroke="#3D6B47" stroke-width="1.5"/>
+      <circle cx="300" cy="300" r="230" stroke="#2E78A8" stroke-width="1.5"/>
+      <circle cx="300" cy="300" r="300" stroke="#C25B3F" stroke-width="1.5"/>
+    </svg>
+    <div class="wrap reveal">
+      <p class="eyebrow">Eutopia · a good place, not a perfect one</p>
+      <h1>We're pulling a <em>better future</em> forward.</h1>
+      <p class="motto">Progress for the benefit of all.</p>
+      <p class="lede">Launching projects in the city of Hudson and surrounding Columbia County, New York — working models for what a more generous, sustainable, and trusting world can look like. We plant seeds we hope keep growing long after we're gone.</p>
+      <div class="cta-row">
+        <a class="btn btn-primary" href="#projects">Explore the projects →</a>
+        <a class="btn btn-ghost" href="#philosophy">What we believe</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- PHILOSOPHY -->
+  <section class="belief" id="philosophy">
+    <div class="wrap">
+      <p class="sec-eyebrow">Our philosophy</p>
+      <h2 class="reveal">An optimistic vision — and the grit to build it.</h2>
+      <p class="philo-intro reveal">Humanity has an amazing new set of capabilities, from artificial intelligence to clean energy to synthetic biology. The question of our moment is what we should be working toward given our extraordinary powers. <b>Eutopia comes from the Greek "Eu" (good) and "topos" (place)</b> — unlike Utopia, which means "nowhere," Eutopia is about making our communities, our cities, our regions, and ultimately all of Earth a good place for humans and other species. The best initiatives come from people genuinely taking care of one another. We learn from each other and from the world at large — and then we get to work building models that make a better future real, one initiative at a time.</p>
+
+      <div class="belief-grid">
+        <ul class="values reveal">
+          <li><h3>Optimism</h3><p>Problems are solvable and a better world is achievable, so we approach them with joyful optimism.</p></li>
+          <li><h3>Attention</h3><p>Attention is the foundation of all personal and collective agency, so we commit to the lifelong cultivation of our capacity for presence.</p></li>
+          <li><h3>Community</h3><p>Interpersonal connection is the cornerstone of a fulfilling life, so we build strong local communities rooted in our shared humanity and celebrating our individual diversity.</p></li>
+          <li><h3>Love</h3><p>Humanity's power to both create and destroy grows exponentially, so we operate from a foundation of universal love and embrace our responsibility to promote the flourishing of all conscious life.</p></li>
+          <li><h3>Truth</h3><p>Knowledge, humility, and understanding are the keys to solving any problem, so we approach ideas with curiosity, creativity, and openness to criticism.</p></li>
+        </ul>
+
+        <div class="circles reveal">
+          <svg viewBox="0 0 320 320" role="img" aria-label="Concentric circles: yourself, then family, then community, then the world">
+            <circle cx="160" cy="160" r="150" fill="none" stroke="#C25B3F" stroke-width="1.5"/>
+            <circle cx="160" cy="160" r="110" fill="none" stroke="#2E78A8" stroke-width="1.5"/>
+            <circle cx="160" cy="160" r="70"  fill="none" stroke="#3D6B47" stroke-width="1.5"/>
+            <circle cx="160" cy="160" r="30"  fill="#D99523"/>
+            <text x="160" y="164" text-anchor="middle" font-family="Hanken Grotesk" font-size="12" font-weight="600" fill="#1E1B16">You</text>
+            <text x="160" y="108" text-anchor="middle" font-family="Hanken Grotesk" font-size="12" fill="#3D6B47" font-weight="600">Family</text>
+            <text x="160" y="68"  text-anchor="middle" font-family="Hanken Grotesk" font-size="12" fill="#2E78A8" font-weight="600">Community</text>
+            <text x="160" y="28"  text-anchor="middle" font-family="Hanken Grotesk" font-size="12" fill="#C25B3F" font-weight="600">The world</text>
+          </svg>
+          <p class="caption">We work in concentric circles — care for yourself first, then those closest to you, then your community, then the world at large. Sometimes sequentially, others concurrently.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PROJECTS -->
+  <section id="projects">
+    <div class="wrap">
+      <p class="sec-eyebrow">The projects</p>
+      <h2 class="reveal">Working models for the future we want.</h2>
+      <p class="sec-lede reveal">Each one is independent, real, and running today. Tap any square to learn more.</p>
+
+      <div class="grid">
+        <a class="tile t-spark reveal" href="https://www.sparkofhudson.org" target="_blank" rel="noopener">
+          <span class="kicker">Community Learning</span>
+          <div>
+            <h3>The Spark of Hudson</h3>
+            <p>A community learning hub where expertise is shared, not hoarded — where we learn from each other and from the world at large.</p>
+          </div>
+          <span class="go">Visit <span class="arrow">→</span></span>
+        </a>
+
+        <a class="tile t-wally reveal" href="#">
+          <span class="kicker">Climate</span>
+          <div>
+            <h3>Wally Farms</h3>
+            <p>A climate-action farm and home to independent farm entrepreneurs.</p>
+          </div>
+          <span class="go">Learn more <span class="arrow">→</span></span>
+        </a>
+
+        <a class="tile t-up reveal" href="#">
+          <span class="kicker">Economic dignity</span>
+          <div>
+            <h3>HudsonUP</h3>
+            <p>A basic-income pilot in Hudson, New York — proving what stability makes possible.</p>
+          </div>
+          <span class="go">Learn more <span class="arrow">→</span></span>
+        </a>
+
+        <a class="tile t-dots reveal" href="#">
+          <span class="kicker">Housing</span>
+          <div>
+            <h3>Hudson Dots</h3>
+            <p>Affordable housing built for the people who make Hudson, Hudson.</p>
+          </div>
+          <span class="go">Learn more <span class="arrow">→</span></span>
+        </a>
+
+        <a class="tile t-nest reveal" href="#">
+          <span class="kicker">Co-living</span>
+          <div>
+            <h3>HudsonNest</h3>
+            <p>Intentional co-living, designed around real community.</p>
+          </div>
+          <span class="go">Learn more <span class="arrow">→</span></span>
+        </a>
+
+        <a class="tile t-diner reveal" href="#">
+          <span class="kicker">Steward ownership</span>
+          <div>
+            <h3>Dove's Diner</h3>
+            <p>The beloved West Taghkanic Diner, reborn under steward ownership.</p>
+          </div>
+          <span class="go">Learn more <span class="arrow">→</span></span>
+        </a>
+
+        <a class="tile tile-wide reveal" href="#">
+          <div class="steward-inner">
+            <div>
+              <span class="kicker">A model we believe in</span>
+              <h3>Steward Ownership</h3>
+              <p>Businesses held in trust for their mission and their people — not for outside profit. We back projects putting it into practice.</p>
+            </div>
+            <div>
+              <div class="steward-list">
+                <span class="chip">Casa Latina</span>
+                <span class="chip">BuildHudson</span>
+                <span class="chip">La Morada</span>
+                <span class="chip">Dove's Diner</span>
+              </div>
+              <span class="go" style="margin-top:16px">How steward ownership works <span class="arrow">→</span></span>
+            </div>
+          </div>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- OTHER WORK -->
+  <section class="other">
+    <div class="wrap">
+      <p class="sec-eyebrow reveal">Also part of our work</p>
+      <div class="other-cols">
+        <div class="reveal">
+          <h3>Philanthropy</h3>
+          <p>Clearing medical debt, hotspots for students during COVID, Feed Hudson, food programs, gleaning for food banks, and Operation Unite.</p>
+        </div>
+        <div class="reveal">
+          <h3>Local investment</h3>
+          <p>We back local builders and makers — from Edenesque to neighborhood food and media ventures — and support farm entrepreneurs with land and capital at Wally Farms.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer id="contact">
+  <div class="wrap foot-inner">
+    <a class="brand" href="#top"><span class="mark" aria-hidden="true"></span>Eutopia</a>
+    <p class="foot-meta">Hudson, New York · <a href="mailto:hello@eutopia.org">hello@eutopia.org</a></p>
+  </div>
+</footer>
+
+<script>
+  (function(){
+    var els = document.querySelectorAll('.reveal');
+    if(!('IntersectionObserver' in window)){els.forEach(function(e){e.classList.add('in')});return;}
+    var io = new IntersectionObserver(function(entries){
+      entries.forEach(function(en){ if(en.isIntersecting){ en.target.classList.add('in'); io.unobserve(en.target);} });
+    },{threshold:.12});
+    els.forEach(function(e){io.observe(e)});
+  })();
+</script>
+</body>
+</html>
