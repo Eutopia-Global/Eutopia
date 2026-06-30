@@ -1,0 +1,20 @@
+/* ---------- About / Founders ---------- */
+
+.about-hero{padding:72px 0 8px}
+.about-hero h1{
+  font-family:"Fraunces",serif;font-weight:600;
+  font-size:clamp(34px,5vw,52px);line-height:1.05;letter-spacing:-.02em;margin:0 0 14px;
+}
+.about-hero .lede{font-size:20px;color:var(--soft);max-width:56ch;margin:0;line-height:1.55}
+
+.founders-photo{margin:20px auto 48px;max-width:440px}
+.founders-photo .photo-ph{
+  border-radius:var(--r);overflow:hidden;border:1px solid var(--line);line-height:0;
+}
+.founders-photo img{width:100%;height:auto;display:block}
+
+.founders{display:grid;grid-template-columns:1fr 1fr;gap:48px}
+@media(max-width:720px){.founders{grid-template-columns:1fr;gap:36px}}
+.founder-bio h2{font-family:"Fraunces",serif;font-weight:600;font-size:26px;line-height:1.1;margin:0 0 12px}
+.founder-bio p{font-size:17px;color:var(--soft);line-height:1.65;margin:0}
+.founder-bio a{color:var(--gold);text-decoration:underline}
