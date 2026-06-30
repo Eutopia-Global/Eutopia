@@ -7,7 +7,7 @@
 }
 .about-hero .lede{font-size:20px;color:var(--soft);max-width:56ch;margin:0;line-height:1.55}
 
-.founders-photo{margin:20px auto 48px;max-width:440px}
+.founders-photo{margin:2px auto 44px;max-width:440px}
 .founders-photo .photo-ph{
   border-radius:var(--r);overflow:hidden;border:1px solid var(--line);line-height:0;
 }
