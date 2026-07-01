@@ -138,7 +138,6 @@ h2{font-family:"Fraunces",serif;font-weight:600;font-size:clamp(28px,4vw,42px);l
 }
 .tile .go .arrow{transition:transform .2s}
 .tile:hover .go .arrow{transform:translateX(4px)}
-.tile .soon{margin-top:18px;font-size:13px;font-weight:600;opacity:.85}
 
 .t-spark{background:var(--spark)}
 .t-wally{background:var(--wally)}
