@@ -146,6 +146,7 @@ h2{font-family:"Fraunces",serif;font-weight:600;font-size:clamp(28px,4vw,42px);l
 .t-nest{background:var(--nest)}
 .t-diner{background:var(--diner)}
 
+.t-steward{background:var(--steward)}
 .tile-wide{grid-column:span 3;background:var(--steward);min-height:auto}
 .tile-wide.t-wally{background:var(--wally)}
 a.go{text-decoration:none;color:inherit}
