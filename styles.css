@@ -70,9 +70,9 @@ h1{
   font-size:clamp(40px,7vw,76px);line-height:1.02;letter-spacing:-.02em;
   margin:0 0 14px;max-width:14ch;
 }
-h1 em{font-style:italic;color:var(--gold)}
+h1 em{font-style:normal;color:var(--gold)}
 .motto{
-  font-family:"Fraunces",serif;font-style:italic;font-weight:500;
+  font-family:"Fraunces",serif;font-style:normal;font-weight:500;
   font-size:clamp(20px,2.6vw,26px);color:var(--soft);margin:0 0 24px;
 }
 .lede{font-size:clamp(18px,2.2vw,21px);color:var(--muted);max-width:56ch;margin:0 0 32px}
