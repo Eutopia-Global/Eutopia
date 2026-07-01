@@ -20,3 +20,19 @@
 .s-callout{background:var(--steward);color:#fff;border-radius:var(--r);padding:30px 32px;margin:30px 0}
 .s-callout h2{color:#fff;margin:0 0 10px}
 .s-callout p{color:rgba(255,255,255,.92);margin:0;font-size:17px;line-height:1.6}
+
+/* ---- business / housing split ---- */
+.s-split{display:grid;grid-template-columns:1fr 1fr;gap:26px;margin:22px 0 8px}
+@media(max-width:760px){.s-split{grid-template-columns:1fr}}
+.s-lane{border:1px solid var(--line);border-radius:var(--r);padding:26px 26px 28px;background:var(--paper)}
+.s-lane .lane-kicker{font-size:12px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--gold);margin:0 0 6px}
+.s-lane h3{font-family:"Fraunces",serif;font-weight:600;font-size:23px;line-height:1.15;margin:0 0 6px}
+.s-lane .lane-sub{font-size:15px;color:var(--muted);margin:0 0 18px;line-height:1.5}
+.s-lane .s-steps{gap:13px}
+.s-lane .s-steps .n{width:32px;height:32px;font-size:15px}
+.s-lane .s-steps li{grid-template-columns:32px 1fr;gap:13px}
+.s-lane .s-steps p{font-size:15.5px;line-height:1.5}
+.lane-examples{display:flex;flex-wrap:wrap;gap:8px;margin-top:22px;padding-top:20px;border-top:1px solid var(--line)}
+.lane-examples a{font-size:14px;font-weight:600;color:#fff;background:var(--steward);padding:7px 14px;border-radius:999px;text-decoration:none;transition:opacity .2s}
+.lane-examples a:hover{opacity:.88}
+.lane-examples .ex-label{width:100%;font-size:12px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);margin-bottom:2px}
