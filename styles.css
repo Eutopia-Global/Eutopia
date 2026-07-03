@@ -54,8 +54,9 @@ header.nav{
 .nav-links a{text-decoration:none;color:var(--muted);transition:color .2s}
 .nav-links a:hover{color:var(--ink)}
 @media(max-width:640px){
-  .nav-inner{flex-wrap:wrap;height:auto;padding-top:10px;padding-bottom:10px;gap:8px;justify-content:center}
-  .nav-links{width:100%;justify-content:center;flex-wrap:wrap;gap:12px 18px;font-size:14px}
+  .nav-inner{flex-wrap:wrap;height:auto;padding-top:12px;padding-bottom:12px;gap:10px;justify-content:center}
+  .nav-links{display:flex;width:100%;justify-content:center;flex-wrap:wrap;gap:10px 20px;font-size:15px;padding-top:10px;border-top:1px solid var(--line)}
+  .nav-links a{color:var(--ink)}
 }
 
 /* ---------- hero ---------- */
