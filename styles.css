@@ -53,10 +53,29 @@ header.nav{
 .nav-links{display:flex;gap:28px;font-size:15px;font-weight:500}
 .nav-links a{text-decoration:none;color:var(--muted);transition:color .2s}
 .nav-links a:hover{color:var(--ink)}
+.nav-toggle{
+  display:none;
+  width:42px;height:42px;padding:0;margin:0;
+  background:transparent;border:0;cursor:pointer;
+  flex-direction:column;align-items:center;justify-content:center;gap:5px;
+}
+.nav-toggle-bar{
+  display:block;width:24px;height:2px;border-radius:2px;background:var(--ink);
+  transition:transform .25s ease, opacity .2s ease;
+}
+.nav-toggle[aria-expanded="true"] .nav-toggle-bar:nth-child(1){transform:translateY(7px) rotate(45deg)}
+.nav-toggle[aria-expanded="true"] .nav-toggle-bar:nth-child(2){opacity:0}
+.nav-toggle[aria-expanded="true"] .nav-toggle-bar:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
 @media(max-width:640px){
-  .nav-inner{flex-wrap:wrap;height:auto;padding-top:12px;padding-bottom:12px;gap:10px;justify-content:center}
-  .nav-links{display:flex;width:100%;justify-content:center;flex-wrap:wrap;gap:10px 20px;font-size:15px;padding-top:10px;border-top:1px solid var(--line)}
-  .nav-links a{color:var(--ink)}
+  .nav-inner{flex-wrap:wrap;height:auto;padding-top:12px;padding-bottom:12px}
+  .nav-toggle{display:flex}
+  .nav-links{
+    display:none;width:100%;order:3;
+    flex-direction:column;align-items:flex-start;gap:2px;
+    padding-top:8px;margin-top:12px;border-top:1px solid var(--line);
+  }
+  .nav-links.open{display:flex}
+  .nav-links a{color:var(--ink);width:100%;padding:10px 2px;font-size:16px}
 }
 
 /* ---------- hero ---------- */
@@ -175,6 +194,7 @@ a.chip:hover{background:rgba(255,255,255,.28);border-color:rgba(255,255,255,.45)
 @media(max-width:700px){.other-cols{grid-template-columns:1fr;gap:28px}}
 .other h3{font-family:"Fraunces",serif;font-size:20px;margin:0 0 10px}
 .other p{margin:0;color:var(--muted);font-size:16px}
+.other .tile,.other .tile h3,.other .tile p,.other .tile .kicker,.other .tile .go{color:#fff}
 
 /* ---------- footer ---------- */
 footer{padding:56px 0;border-top:1px solid var(--line)}
