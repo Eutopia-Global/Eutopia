@@ -7,7 +7,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700&family=Hanken+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet" />
-<link rel="stylesheet" href="../styles.css?v=2" />
+<link rel="stylesheet" href="../styles.css?v=4" />
 <link rel="stylesheet" href="wally.css" />
 </head>
 <body>
@@ -15,11 +15,17 @@
 <header class="nav">
   <div class="wrap nav-inner">
     <a class="brand" href="../index.html"><span class="mark" aria-hidden="true"></span>Eutopia</a>
-    <nav class="nav-links" aria-label="Primary">
+    <button class="nav-toggle" aria-label="Menu" aria-expanded="false" aria-controls="primary-nav">
+      <span class="nav-toggle-bar" aria-hidden="true"></span>
+      <span class="nav-toggle-bar" aria-hidden="true"></span>
+      <span class="nav-toggle-bar" aria-hidden="true"></span>
+    </button>
+    <nav class="nav-links" id="primary-nav" aria-label="Primary">
       <a href="../index.html#philosophy">Philosophy</a>
       <a href="../index.html#projects">Projects</a>
       <a href="../blog/">Blog</a>
       <a href="../about/">About</a>
+      <a href="../press/">Press</a>
       <a href="../contact/">Contact</a>
     </nav>
   </div>
@@ -118,5 +124,23 @@
   </div>
 </footer>
 
+<script>
+  (function(){
+    var toggle = document.querySelector('.nav-toggle');
+    var links = document.getElementById('primary-nav');
+    if(toggle && links){
+      var setOpen = function(open){
+        links.classList.toggle('open', open);
+        toggle.setAttribute('aria-expanded', open ? 'true' : 'false');
+      };
+      toggle.addEventListener('click', function(){
+        setOpen(!links.classList.contains('open'));
+      });
+      links.addEventListener('click', function(e){
+        if(e.target.tagName === 'A') setOpen(false);
+      });
+    }
+  })();
+</script>
 </body>
 </html>

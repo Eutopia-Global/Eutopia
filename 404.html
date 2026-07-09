@@ -44,5 +44,23 @@
     <p><strong>This place isn't here.</strong><br />The page you were looking for could not be found.</p>
     <a class="btn" href="/">Back to Eutopia &rarr;</a>
   </div>
+<script>
+  (function(){
+    var toggle = document.querySelector('.nav-toggle');
+    var links = document.getElementById('primary-nav');
+    if(toggle && links){
+      var setOpen = function(open){
+        links.classList.toggle('open', open);
+        toggle.setAttribute('aria-expanded', open ? 'true' : 'false');
+      };
+      toggle.addEventListener('click', function(){
+        setOpen(!links.classList.contains('open'));
+      });
+      links.addEventListener('click', function(e){
+        if(e.target.tagName === 'A') setOpen(false);
+      });
+    }
+  })();
+</script>
 </body>
 </html>
