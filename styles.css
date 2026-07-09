@@ -144,7 +144,7 @@ h2{font-family:"Fraunces",serif;font-weight:600;font-size:clamp(28px,4vw,42px);l
 @media(max-width:520px){.grid{grid-template-columns:1fr}}
 
 .tile{
-  position:relative;display:flex;flex-direction:column;justify-content:space-between;
+  position:relative;display:flex;flex-direction:column;
   min-height:212px;padding:24px;border-radius:var(--r);
   color:#fff;text-decoration:none;overflow:hidden;
   transition:transform .2s ease, box-shadow .2s ease;
@@ -156,12 +156,12 @@ h2{font-family:"Fraunces",serif;font-weight:600;font-size:clamp(28px,4vw,42px);l
 .tile h3{font-family:"Fraunces",serif;font-weight:600;font-size:25px;line-height:1.1;margin:14px 0 6px}
 .tile p{margin:0;font-size:15px;opacity:.92;line-height:1.45}
 .tile .go{
-  margin-top:18px;font-size:14px;font-weight:600;display:inline-flex;align-items:center;gap:7px;
+  margin-top:auto;padding-top:18px;font-size:14px;font-weight:600;display:inline-flex;align-items:center;gap:7px;
   opacity:.95;
 }
 .tile .go .arrow{transition:transform .2s}
 .tile:hover .go .arrow{transform:translateX(4px)}
-.tile .soon{margin-top:18px;font-size:13px;font-weight:600;opacity:.85}
+.tile .soon{margin-top:auto;padding-top:18px;font-size:13px;font-weight:600;opacity:.85}
 
 .t-spark{background:var(--spark)}
 .t-wally{background:var(--wally)}
