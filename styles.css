@@ -167,7 +167,7 @@ h2{font-family:"Fraunces",serif;font-weight:600;font-size:clamp(28px,4vw,42px);l
   margin-top:auto;padding-top:18px;font-size:14.5px;font-weight:700;display:inline-flex;align-items:center;gap:7px;
   opacity:1;text-decoration:underline;text-underline-offset:4px;text-decoration-thickness:1.5px;
 }
-.tile .go .arrow{transition:transform .2s}
+.tile .go .arrow{display:inline-block;text-decoration:none;transition:transform .2s}
 .tile:hover .go .arrow{transform:translateX(4px)}
 .tile .soon{margin-top:auto;padding-top:18px;font-size:13px;font-weight:600;opacity:.85}
 
@@ -193,8 +193,13 @@ a.go{text-decoration:none;color:inherit}
   display:inline-flex;align-items:baseline;gap:7px;
 }
 .chip-note{font-size:12px;font-weight:500;opacity:.78;font-style:italic}
-a.chip{color:#fff;text-decoration:none;transition:background .2s ease,border-color .2s ease}
+a.chip{color:#fff;text-decoration:none;transition:background .2s ease,border-color .2s ease,filter .2s ease}
 a.chip:hover{background:rgba(255,255,255,.28);border-color:rgba(255,255,255,.45)}
+a.chip.c1{background:#2E8B84;border-color:transparent}
+a.chip.c2{background:#C25B3F;border-color:transparent}
+a.chip.c3{background:#D99523;border-color:transparent}
+a.chip.c4{background:#2E78A8;border-color:transparent}
+a.chip.c1:hover,a.chip.c2:hover,a.chip.c3:hover,a.chip.c4:hover{filter:brightness(1.12);border-color:transparent}
 
 /* ---------- other work ---------- */
 .other{background:var(--paper-2)}
