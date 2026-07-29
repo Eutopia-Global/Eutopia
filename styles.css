@@ -164,8 +164,8 @@ h2{font-family:"Fraunces",serif;font-weight:600;font-size:clamp(28px,4vw,42px);l
 .tile h3{font-family:"Fraunces",serif;font-weight:600;font-size:25px;line-height:1.1;margin:14px 0 6px}
 .tile p{margin:0;font-size:15px;opacity:.92;line-height:1.45}
 .tile .go{
-  margin-top:auto;padding-top:18px;font-size:14px;font-weight:600;display:inline-flex;align-items:center;gap:7px;
-  opacity:.95;
+  margin-top:auto;padding-top:18px;font-size:14.5px;font-weight:700;display:inline-flex;align-items:center;gap:7px;
+  opacity:1;text-decoration:underline;text-underline-offset:4px;text-decoration-thickness:1.5px;
 }
 .tile .go .arrow{transition:transform .2s}
 .tile:hover .go .arrow{transform:translateX(4px)}
