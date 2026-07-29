@@ -79,12 +79,12 @@ header.nav{
 }
 
 /* ---------- hero ---------- */
-.hero{position:relative;overflow:hidden;padding:18px 0 12px}
+.hero{position:relative;overflow:hidden;padding:56px 0 40px;background:var(--paper-2)}
 .hero .eyebrow{margin-bottom:10px}
 .hero h1{font-size:clamp(32px,4.8vw,52px);margin-bottom:10px;max-width:22ch}
 .hero .motto{margin-bottom:12px}
 .hero .lede{margin-bottom:18px}
-#projects{padding-top:14px}
+#projects{padding-top:40px}
 #projects .sec-eyebrow{margin-bottom:8px}
 #projects h2{margin-bottom:8px}
 #projects .sec-lede{margin-bottom:20px}
