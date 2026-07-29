@@ -79,7 +79,9 @@ header.nav{
 }
 
 /* ---------- hero ---------- */
-.hero{position:relative;overflow:hidden;padding:44px 0 36px}
+.hero{position:relative;overflow:hidden;padding:28px 0 20px}
+#projects{padding-top:30px}
+#projects .sec-lede{margin-bottom:24px}
 .hero .rings{
   position:absolute;right:-160px;top:-120px;width:620px;height:620px;
   pointer-events:none;opacity:.5;
