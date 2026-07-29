@@ -1,6 +1,6 @@
 # Eutopia
 
-The website for Eutopia — a good place, not a perfect one.
+The website for Eutopia — a good place.
 
 A static single-page site deployed via GitHub Pages to [eutopia.global](https://eutopia.global).
 

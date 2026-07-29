@@ -79,7 +79,7 @@ header.nav{
 }
 
 /* ---------- hero ---------- */
-.hero{position:relative;overflow:hidden;padding:88px 0 64px}
+.hero{position:relative;overflow:hidden;padding:44px 0 36px}
 .hero .rings{
   position:absolute;right:-160px;top:-120px;width:620px;height:620px;
   pointer-events:none;opacity:.5;
