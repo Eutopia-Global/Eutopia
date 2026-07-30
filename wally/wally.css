@@ -44,7 +44,7 @@
 .biz-card .kicker{font-size:12px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:#fff;opacity:.82}
 .biz-card h3{font-family:"Fraunces",serif;font-weight:600;font-size:22px;margin:4px 0 0;color:#fff}
 .biz-card p{margin:2px 0 0;font-size:15px;color:#fff;opacity:.9;line-height:1.45}
-.biz-card .go{margin-top:14px;font-size:14px;font-weight:700;color:#fff;opacity:.98;display:inline-flex;gap:6px;align-items:center;text-decoration:underline;text-underline-offset:3px}
+.biz-card .go{margin-top:14px;font-size:14px;font-weight:700;color:#fff;opacity:.98;display:inline-flex;gap:6px;align-items:center}
 .biz-card .go .arrow{display:inline-block;text-decoration:none;transition:transform .2s}
 .biz-card:hover .go .arrow{transform:translateX(4px)}
 
